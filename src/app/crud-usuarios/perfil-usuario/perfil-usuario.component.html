@@ -1,8 +1,22 @@
 <div class="wrapper">
-    <h3>Listado de personajes:</h3>
+    <h3>Listado de usuarios:</h3>
     <div class="listado">
         <ul class="listado-items" *ngFor="let usuario of usuarios">
-            <li class="listado-usuarios-nombre">{{personaje.nombre}}</li>
+            <li class="listado-usuarios-nombre">
+                <button (click)="itemSelected(usuario)">{{usuario.nombre}}</button>
+            </li>
         </ul>
     </div>
+</div>
+
+<div *ngIf="detalle">
+    <app-detalle [userSeleccionado]="userSeleccionado"></app-detalle>
+</div>
+
+<div>
+    <button (click)="registro()">Registrar</button>
+</div>
+
+<div *ngIf="registrar">
+    <app-registro-usuario (onNuevoUsuario)="agregarUsuario($event)" [usuariosAgregar]="usuarios"></app-registro-usuario>
 </div>

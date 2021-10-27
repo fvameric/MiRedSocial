@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+//imports
+import { Usuario } from 'src/app/interfaces/usuarios';
 
 @Component({
   selector: 'app-detalle',
@@ -10,6 +13,10 @@ export class DetalleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @Input() userSeleccionado: Usuario = {
+    nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: '', confirmarPassword: ''
   }
 
 }

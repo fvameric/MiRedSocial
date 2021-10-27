@@ -1,0 +1,24 @@
+<div class="formulario">
+    <h3>Agregar un nuevo personaje:</h3>
+    <form (ngSubmit)="submit()">
+        <br>
+        Nombre: <input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario">
+        <br>
+        Apellidos: <input type="text" [(ngModel)]="apellidosUsuario" name="apellidosUsuario">
+        <br>
+        Edad: <input type="number" [(ngModel)]="edadUsuario" name="edadUsuario">
+        <br>
+        Foto: <input type="text" [(ngModel)]="fotoUsuario" name="fotoUsuario">
+        <br>
+        Descripcion: <input type="text" [(ngModel)]="descripcionUsuario" name="descripcionUsuario">
+        <br>
+        Correo: <input type="text" [(ngModel)]="correoUsuario" name="correoUsuario">
+        <br>
+        Password: <input type="text" [(ngModel)]="passwordUsuario" name="passwordUsuario">
+        <br>
+        Confirmar password: <input type="text" [(ngModel)]="confirmarPasswordUsuario" name="confirmarPasswordUsuario">
+        <br><br>
+
+        <input class="input-submit" type="submit" value="enviar">
+    </form>
+</div>
