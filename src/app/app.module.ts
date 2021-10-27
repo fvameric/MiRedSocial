@@ -9,7 +9,7 @@ import { PanelAdminComponent } from './crud-usuarios/panel-admin/panel-admin.com
 
 //import module
 import { CrudModule } from './crud-usuarios/crud.module';
-import { DetalleComponent } from './detalle/detalle.component';
+import { DetalleComponent } from './crud-usuarios/detalle/detalle.component';
 @NgModule({
   declarations: [
     AppComponent,
