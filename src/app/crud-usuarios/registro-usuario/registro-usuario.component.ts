@@ -2,7 +2,6 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 
 //imports
 import { Usuario } from 'src/app/interfaces/usuarios';
-import { NgForm } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import Swal from 'sweetalert2';
 
@@ -18,9 +17,8 @@ export class RegistroUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   @Input() usuariosAgregar: Usuario[] = [];
-
+  
   @Output() onNuevoUsuario: EventEmitter<Usuario> = new EventEmitter();
   
   nombreUsuario = "nombre";
@@ -40,7 +38,6 @@ export class RegistroUsuarioComponent implements OnInit {
       confirmButtonText: 'Save',
       denyButtonText: `Don't save`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         const usuarioNuevo: Usuario = {
           nombre: '',

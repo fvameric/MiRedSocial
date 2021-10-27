@@ -17,6 +17,14 @@
     <button (click)="registro()">Registrar</button>
 </div>
 
+<div>
+    <button (click)="panelAdmin()">Panel de admin</button>
+</div>
+
 <div *ngIf="registrar">
     <app-registro-usuario (onNuevoUsuario)="agregarUsuario($event)" [usuariosAgregar]="usuarios"></app-registro-usuario>
+</div>
+
+<div *ngIf="panel">
+    <app-panel-admin (onUsuarioBorrado)="eliminarUsuario($event)" [usersPanel]="usuarios"></app-panel-admin>
 </div>

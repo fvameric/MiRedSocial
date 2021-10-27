@@ -18,5 +18,4 @@ export class DetalleComponent implements OnInit {
   @Input() userSeleccionado: Usuario = {
     nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: '', confirmarPassword: ''
   }
-
 }

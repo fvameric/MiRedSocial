@@ -1,1 +1,10 @@
-<p>panel-admin works!</p>
+<div class="wrapper">
+    <h3>Listado de usuarios:</h3>
+    <div class="listado">
+        <ul class="listado-items" *ngFor="let usuario of usersPanel">
+            <li class="listado-usuarios-nombre">
+                <button (click)="itemSelected(usuario)">{{usuario.nombre}}</button>
+            </li>
+        </ul>
+    </div>
+</div>

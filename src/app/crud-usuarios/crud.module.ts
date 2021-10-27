@@ -5,11 +5,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 //main
-import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { PerfilUsuarioComponent } from './perfiles-usuario/perfil-usuario/perfil-usuario.component';
 
-import { RegistroUsuarioComponent } from './perfil-usuario/registro-usuario/registro-usuario.component';
+import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
-import { DetalleComponent } from './detalle/detalle.component';
+import { DetalleComponent } from './perfiles-usuario/detalle/detalle.component';
 
 @NgModule({
   declarations: [

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 //import module
 import { CrudModule } from './crud-usuarios/crud.module';
-import { PerfilUsuarioComponent } from './crud-usuarios/perfil-usuario/perfil-usuario.component';
+import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-usuario/perfil-usuario.component';
 @NgModule({
   declarations: [
     AppComponent
