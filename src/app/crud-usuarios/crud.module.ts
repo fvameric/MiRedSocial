@@ -9,13 +9,12 @@ import { PerfilUsuarioComponent } from './perfiles-usuario/perfil-usuario/perfil
 
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
-import { DetalleComponent } from './perfiles-usuario/detalle/detalle.component';
+
 
 @NgModule({
   declarations: [
     PerfilUsuarioComponent,
     RegistroUsuarioComponent,
-    DetalleComponent,
     PanelAdminComponent
   ],
   imports: [

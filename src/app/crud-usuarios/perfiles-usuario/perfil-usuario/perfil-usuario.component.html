@@ -3,14 +3,10 @@
     <div class="listado">
         <ul class="listado-items" *ngFor="let usuario of usuarios">
             <li class="listado-usuarios-nombre">
-                <button (click)="itemSelected(usuario)">{{usuario.nombre}}</button>
+                <button (click)="abrirModal(usuario)">{{usuario.nombre}}</button>
             </li>
         </ul>
     </div>
-</div>
-
-<div *ngIf="detalle">
-    <app-detalle [userSeleccionado]="userSeleccionado"></app-detalle>
 </div>
 
 <div>
@@ -28,3 +24,4 @@
 <div *ngIf="panel">
     <app-panel-admin (onUsuarioBorrado)="eliminarUsuario($event)" [usersPanel]="usuarios"></app-panel-admin>
 </div>
+
