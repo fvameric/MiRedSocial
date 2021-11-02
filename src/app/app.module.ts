@@ -7,14 +7,22 @@ import { AppComponent } from './app.component';
 //import module
 import { CrudModule } from './crud-usuarios/crud.module';
 import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-usuario/perfil-usuario.component';
+import { ModelDetalleComponent } from './crud-usuarios/perfiles-usuario/modal-detalle/model-detalle.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModelDetalleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CrudModule
+    CrudModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [
