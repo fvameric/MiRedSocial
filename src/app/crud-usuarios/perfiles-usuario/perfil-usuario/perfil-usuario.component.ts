@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/usuarios';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponentComponent } from '../modal/modal.component';
+import { ModalComponent } from '../modal/modal.component';
 @Component({
   selector: 'app-perfil-usuario',
   templateUrl: './perfil-usuario.component.html',
@@ -58,7 +58,7 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   abrirModal(user: Usuario) {
-    const modalRef = this.modalService.open(ModalComponentComponent);
+    const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.userSeleccionado = user;
   }
 }

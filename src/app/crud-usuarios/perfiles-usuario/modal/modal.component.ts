@@ -9,7 +9,7 @@ import { Usuario } from 'src/app/interfaces/usuarios';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-export class ModalComponentComponent implements OnInit {
+export class ModalComponent implements OnInit {
   
   constructor(public activeModal: NgbActiveModal) { }
 

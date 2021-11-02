@@ -10,7 +10,7 @@ import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { ModalComponentComponent } from './crud-usuarios/perfiles-usuario/modal/modal.component';
+import { ModalComponent } from './crud-usuarios/perfiles-usuario/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { ModalComponentComponent } from './crud-usuarios/perfiles-usuario/modal/
     PerfilUsuarioComponent
   ],
   entryComponents: [
-    ModalComponentComponent
+    ModalComponent
   ]
 })
 export class AppModule { }
