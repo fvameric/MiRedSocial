@@ -21,10 +21,10 @@ export class PanelAdminComponent implements OnInit {
   itemSelected(user: Usuario) {
 
     Swal.fire({
-      title: 'Do you want to save the changes?',
+      title: 'Realmente quieres eliminar a ' + user.nombre + '?',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: 'Yes',
+      confirmButtonText: 'Sí',
       denyButtonText: 'No',
       customClass: {
         actions: 'my-actions',
@@ -35,9 +35,9 @@ export class PanelAdminComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.onUsuarioBorrado.emit(user);
-        Swal.fire('Saved!', '', 'success')
+        Swal.fire('Se eliminó a ' + user.nombre + '!', '', 'success')
       } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info')
+        Swal.fire('No se eliminó a nadie', '', 'info')
       }
     })
   }

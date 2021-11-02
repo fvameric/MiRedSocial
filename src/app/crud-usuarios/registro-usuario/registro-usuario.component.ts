@@ -32,11 +32,11 @@ export class RegistroUsuarioComponent implements OnInit {
 
   submit() {
     Swal.fire({
-      title: 'Do you want to save the changes?',
+      title: 'Realmente quieres registrar a ' + this.nombreUsuario + '?',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: 'Save',
-      denyButtonText: `Don't save`,
+      confirmButtonText: 'Confirmar registro',
+      denyButtonText: `No guardar`,
     }).then((result) => {
       if (result.isConfirmed) {
         const usuarioNuevo: Usuario = {
@@ -61,9 +61,9 @@ export class RegistroUsuarioComponent implements OnInit {
     
         this.onNuevoUsuario.emit(usuarioNuevo);
 
-        Swal.fire('Saved!', '', 'success')
+        Swal.fire('Se registró a ' + this.nombreUsuario + '!', '', 'success')
       } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info')
+        Swal.fire('No se registró a nadie', '', 'info')
       }
     })
   }
