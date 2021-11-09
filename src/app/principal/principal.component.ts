@@ -12,4 +12,9 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  events: string[] = [];
+  opened: boolean = false;
+
+  shouldRun = true;
+
 }

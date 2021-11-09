@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './crud-usuarios/perfiles-usuario/modal/modal.component';
 import { PrincipalComponent } from './principal/principal.component';
 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,10 @@ import { PrincipalComponent } from './principal/principal.component';
     AppRoutingModule,
     CrudModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [
