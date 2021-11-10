@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 //main
 import { PerfilUsuarioComponent } from './perfiles-usuario/perfil-usuario/perfil-usuario.component';
-
+import { RouterModule } from '@angular/router';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 
@@ -19,7 +19,8 @@ import { PanelAdminComponent } from './panel-admin/panel-admin.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     PerfilUsuarioComponent

@@ -1,3 +1,5 @@
+<a routerLink="/home">principal</a>
+
 <div class="wrapper">
     <h3>Listado de usuarios:</h3>
     <div class="listado">
@@ -24,4 +26,5 @@
 <div *ngIf="panel">
     <app-panel-admin (onUsuarioBorrado)="eliminarUsuario($event)" [usersPanel]="usuarios"></app-panel-admin>
 </div>
+
 

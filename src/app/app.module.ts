@@ -13,14 +13,16 @@ import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './crud-usuarios/perfiles-usuario/modal/modal.component';
 import { PrincipalComponent } from './principal/principal.component';
 
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { SesionComponent } from './sesion/sesion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    SesionComponent
   ],
   imports: [
     BrowserModule,
