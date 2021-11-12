@@ -1,4 +1,36 @@
+<a routerLink="/home/primerlink">primerlink</a>
 <div class="formulario">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        <label for="first-name">First Name: </label><br>
+        <input id="first-name" type="text" formControlName="nombreUsuario"><br><br>
+
+        <label for="last-name">Last Name: </label><br>
+        <input id="last-name" type="text" formControlName="apellidosUsuario"><br><br>
+
+        <label for="last-name">Edad: </label><br>
+        <input id="last-name" type="number" formControlName="edadUsuario"><br><br>
+
+        <label for="last-name">Foto: </label><br>
+        <input id="last-name" type="text" formControlName="fotoUsuario"><br><br>
+
+        <label for="last-name">Desc: </label><br>
+        <input id="last-name" type="text" formControlName="descripcionUsuario"><br><br>
+
+        <label for="last-name">Correo: </label><br>
+        <input id="last-name" type="email" formControlName="correoUsuario"><br><br>
+
+        <label for="last-name">Pass: </label><br>
+        <input id="last-name" type="password" formControlName="passwordUsuario"><br><br>
+
+        <label for="last-name">Confirmar pass: </label><br>
+        <input id="last-name" type="password" formControlName="confirmarPasswordUsuario"><br><br>
+
+        <input id="last-name" type="submit"><br><br>
+    </form>
+</div>
+<!--
+<div class="formulario"></div>
     <h3>Agregar un nuevo personaje:</h3>
     <form (ngSubmit)="submit()">
         <br>
@@ -22,3 +54,4 @@
         <input class="input-submit" type="submit" value="enviar">
     </form>
 </div>
+-->

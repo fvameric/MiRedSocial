@@ -19,6 +19,10 @@ export class PerfilUsuarioComponent implements OnInit {
     { nombre: 'Sonia', apellidos: 'Molina', edad: 28, foto: 'foto', descripcion: 'descr', correo: 'sonia@gmail.com', password: 'sonia', confirmarPassword: 'sonia' }
   ];
 
+  onNuevoUsuario(e: Usuario) {
+    console.log(e);
+  }
+
   constructor(public modalService: NgbModal) { }
 
   ngOnInit(): void {

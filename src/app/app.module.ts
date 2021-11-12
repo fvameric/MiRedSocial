@@ -16,13 +16,11 @@ import { PrincipalComponent } from './principal/principal.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { SesionComponent } from './sesion/sesion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent,
-    SesionComponent
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,

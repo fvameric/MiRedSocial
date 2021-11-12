@@ -9,8 +9,7 @@ import { PerfilUsuarioComponent } from './perfiles-usuario/perfil-usuario/perfil
 import { RouterModule } from '@angular/router';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     PerfilUsuarioComponent,
@@ -20,7 +19,8 @@ import { PanelAdminComponent } from './panel-admin/panel-admin.component';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     PerfilUsuarioComponent

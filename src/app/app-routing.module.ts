@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-usuario/perfil-usuario.component';
+import { RegistroUsuarioComponent } from './crud-usuarios/registro-usuario/registro-usuario.component';
 import { PrincipalComponent } from './principal/principal.component';
-import { SesionComponent } from './sesion/sesion.component';
 
 const routes: Routes = [{
   path: '',
@@ -14,12 +14,12 @@ const routes: Routes = [{
   component: PrincipalComponent
 },
 {
-  path: "sesion",
-  component: SesionComponent
-},
-{
   path: "home/primerlink",
   component: PerfilUsuarioComponent
+},
+{
+  path: "home/registro",
+  component: RegistroUsuarioComponent
 }
 ];
 
