@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 
 //import usuario
 import { Usuario } from 'src/app/interfaces/usuarios';
+import { UsersService } from 'src/app/services/users.service';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../modal/modal.component';
@@ -13,19 +14,20 @@ import { ModalComponent } from '../modal/modal.component';
 export class PerfilUsuarioComponent implements OnInit {
 
   // array usuarios
-  usuarios: Usuario[] = [
-    { nombre: 'Juan', apellidos: 'Lopez', edad: 23, foto: 'foto', descripcion: 'descr', correo: 'correo@gmail.com', password: '1234', confirmarPassword: '1234' },
-    { nombre: 'Fran', apellidos: 'Cesc', edad: 28, foto: 'foto', descripcion: 'descr', correo: 'fran@gmail.com', password: 'fran', confirmarPassword: 'fran' },
-    { nombre: 'Sonia', apellidos: 'Molina', edad: 28, foto: 'foto', descripcion: 'descr', correo: 'sonia@gmail.com', password: 'sonia', confirmarPassword: 'sonia' }
-  ];
+  usuarios: Usuario[] = [];
 
   onNuevoUsuario(e: Usuario) {
     console.log(e);
   }
 
-  constructor(public modalService: NgbModal) { }
+  constructor(public modalService: NgbModal, private userService: UsersService) { }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.usuarios = this.userService.getUsers();
   }
   
   detalle: boolean = false;
@@ -64,5 +66,10 @@ export class PerfilUsuarioComponent implements OnInit {
   abrirModal(user: Usuario) {
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.userSeleccionado = user;
+  }
+
+  /* routerlink with params */
+  customerRouteFor() {
+    return ['/home/paneladmin', this.usuarios];
   }
 }

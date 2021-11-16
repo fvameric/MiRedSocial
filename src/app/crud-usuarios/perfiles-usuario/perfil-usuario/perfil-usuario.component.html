@@ -1,5 +1,8 @@
-<a routerLink="/home">principal</a><br>
-<a routerLink="/home/registro">registrar</a>
+<a routerLink="/home">Home</a><br>
+<a routerLink="/home/registro">Registrar</a><br>
+<a routerLink="/home/paneladmin">Panel de admin</a><br>
+
+<a [routerLink]="customerRouteFor()">Test router param</a>
 
 <div class="wrapper">
     <h3>Listado de usuarios:</h3>
@@ -12,13 +15,11 @@
     </div>
 </div>
 
-
-
+<!--
 <div>
     <button (click)="panelAdmin()">Panel de admin</button>
 </div>
 
-<!--
 <div>
     <button (click)="registro()">Registrar</button>
 </div>
@@ -26,10 +27,8 @@
 <div *ngIf="registrar">
     <app-registro-usuario (onNuevoUsuario)="agregarUsuario($event)" [usuariosAgregar]="usuarios"></app-registro-usuario>
 </div>
--->
 
 <div *ngIf="panel">
     <app-panel-admin (onUsuarioBorrado)="eliminarUsuario($event)" [usersPanel]="usuarios"></app-panel-admin>
 </div>
-
-
+-->

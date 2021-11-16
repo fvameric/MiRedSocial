@@ -6,6 +6,9 @@ import { EventEmitter } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FormGroup, FormControl } from '@angular/forms';
 
+import { UsersService } from 'src/app/services/users.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-registro-usuario',
   templateUrl: './registro-usuario.component.html',
@@ -22,7 +25,7 @@ export class RegistroUsuarioComponent implements OnInit {
     passwordUsuario: new FormControl(''),
     confirmarPasswordUsuario: new FormControl('')
   });
-  constructor() { }
+  constructor(private userService: UsersService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +34,7 @@ export class RegistroUsuarioComponent implements OnInit {
   
   @Output() onNuevoUsuario: EventEmitter<Usuario> = new EventEmitter();
   
+  /*
   nombreUsuario = "nombre";
   apellidosUsuario = "apellido";
   edadUsuario = 0;
@@ -39,17 +43,28 @@ export class RegistroUsuarioComponent implements OnInit {
   correoUsuario = "nuevo@user.com";
   passwordUsuario = "pass";
   confirmarPasswordUsuario = "pass";
+  */
 
   onSubmit() {
     Swal.fire({
-      title: 'Realmente quieres registrar a ' + this.nombreUsuario + '?',
+      title: 'Realmente quieres registrar a ' + this.profileForm.get('nombreUsuario')!.value 
+       + '?',
       showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: 'Confirmar registro',
       denyButtonText: `No guardar`,
     }).then((result) => {
       if (result.isConfirmed) {
-        const usuarioNuevo: Usuario = this.profileForm.value;
+        const usuarioNuevo: Usuario = {
+          nombre: this.profileForm.get('nombreUsuario')!.value,
+          apellidos: this.profileForm.get('apellidosUsuario')!.value,
+          edad: this.profileForm.get('edadUsuario')!.value,
+          foto: this.profileForm.get('fotoUsuario')!.value,
+          descripcion: this.profileForm.get('descripcionUsuario')!.value,
+          correo: this.profileForm.get('correoUsuario')!.value,
+          password: this.profileForm.get('passwordUsuario')!.value,
+          confirmarPassword: this.profileForm.get('confirmarPasswordUsuario')!.value
+        }
   
         /*
         usuarioNuevo.nombre = this.nombreUsuario;
@@ -62,10 +77,12 @@ export class RegistroUsuarioComponent implements OnInit {
         usuarioNuevo.confirmarPassword = this.confirmarPasswordUsuario;
         */
     
-        this.onNuevoUsuario.emit(usuarioNuevo);
+        //this.onNuevoUsuario.emit(usuarioNuevo);
+        //this.userService.addUser(usuarioNuevo);
 
-        //console.log(this.profileForm.value);
-        Swal.fire('Se registró a ' + this.nombreUsuario + '!', '', 'success')
+        this.router.navigate(['/home/listado']);
+
+        Swal.fire('Se registró a ' + this.profileForm.get('nombreUsuario')!.value + '!', '', 'success')
       } else if (result.isDenied) {
         Swal.fire('No se registró a nadie', '', 'info')
       }

@@ -3,19 +3,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 //imports
 import { Usuario } from 'src/app/interfaces/usuarios';
 import Swal from 'sweetalert2';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-panel-admin',
   templateUrl: './panel-admin.component.html',
   styleUrls: ['./panel-admin.component.css']
 })
 export class PanelAdminComponent implements OnInit {
+  usersPanel: Usuario[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe((params) => this.usersPanel);
   }
 
-  @Input() usersPanel: Usuario[] = [];
+  ngOnInit(): void {
+    
+  }
+
+  //@Input() usersPanel: Usuario[] = [];
   @Output() onUsuarioBorrado: EventEmitter<Usuario> = new EventEmitter();
 
   itemSelected(user: Usuario) {
