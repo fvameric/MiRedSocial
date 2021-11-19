@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 //imports
 import { Usuario } from 'src/app/interfaces/usuarios';
 import Swal from 'sweetalert2';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-panel-admin',
@@ -11,14 +11,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./panel-admin.component.css']
 })
 export class PanelAdminComponent implements OnInit {
+  
   usersPanel: Usuario[] = [];
 
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe((params) => this.usersPanel);
+  constructor(private activatedRoute: ActivatedRoute) {
+    
   }
 
   ngOnInit(): void {
-    
+    this.activatedRoute.paramMap.subscribe(params => {
+      console.log(params);
+    });
+    /*
+    this.usersPanel.forEach(element => {
+      console.log(element);
+    });
+    */
   }
 
   //@Input() usersPanel: Usuario[] = [];

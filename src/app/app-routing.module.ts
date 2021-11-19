@@ -4,6 +4,7 @@ import { PanelAdminComponent } from './crud-usuarios/panel-admin/panel-admin.com
 import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-usuario/perfil-usuario.component';
 import { RegistroUsuarioComponent } from './crud-usuarios/registro-usuario/registro-usuario.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { Usuario } from 'src/app/interfaces/usuarios';
 
 const routes: Routes = [{
   path: '',
@@ -23,7 +24,7 @@ const routes: Routes = [{
   component: RegistroUsuarioComponent
 },
 {
-  path: "home/paneladmin",
+  path: "home/paneladmin:users",
   component: PanelAdminComponent
 }
 ];

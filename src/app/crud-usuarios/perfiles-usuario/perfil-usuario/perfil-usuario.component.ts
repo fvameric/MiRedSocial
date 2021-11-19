@@ -58,7 +58,7 @@ export class PerfilUsuarioComponent implements OnInit {
 
     this.usuarios.forEach((element,index) => {
       if (element.correo == data.correo) {
-        this.usuarios.splice(index,1)
+        this.usuarios.splice(index,1);
       }
     });
   }
@@ -69,7 +69,18 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   /* routerlink with params */
-  customerRouteFor() {
-    return ['/home/paneladmin', this.usuarios];
+  testrouter() {
+    let user: Usuario = {
+      nombre: '',
+      apellidos: '',
+      edad: 0,
+      foto: '',
+      descripcion: '',
+      correo: '',
+      password: '',
+      confirmarPassword: ''
+    }
+    user = this.usuarios[0];
+    return ['/home/paneladmin:users', user];
   }
 }
