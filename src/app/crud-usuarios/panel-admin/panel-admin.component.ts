@@ -4,6 +4,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/usuarios';
 import Swal from 'sweetalert2';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-panel-admin',
@@ -12,21 +13,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PanelAdminComponent implements OnInit {
   
-  usersPanel: Usuario[] = [];
+  usuarios: Usuario[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private userService: UsersService) {
     
   }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(params => {
-      console.log(params);
-    });
-    /*
-    this.usersPanel.forEach(element => {
-      console.log(element);
-    });
-    */
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.usuarios = this.userService.getUsers();
   }
 
   //@Input() usersPanel: Usuario[] = [];
@@ -48,7 +46,7 @@ export class PanelAdminComponent implements OnInit {
       }
     }).then((result) => {
       if (result.isConfirmed) {
-        this.onUsuarioBorrado.emit(user);
+        this.userService.deleteUser(user);
         Swal.fire('Se eliminó a ' + user.nombre + '!', '', 'success')
       } else if (result.isDenied) {
         Swal.fire('No se eliminó a nadie', '', 'info')

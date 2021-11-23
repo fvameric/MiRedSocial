@@ -16,8 +16,11 @@ export class PerfilUsuarioComponent implements OnInit {
   // array usuarios
   usuarios: Usuario[] = [];
 
-  onNuevoUsuario(e: Usuario) {
-    console.log(e);
+  //panel: boolean = false;
+  registrar: boolean = false;
+  detalle: boolean = false;
+  userSeleccionado : Usuario = {
+    nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: '', confirmarPassword: ''
   }
 
   constructor(public modalService: NgbModal, private userService: UsersService) { }
@@ -30,29 +33,19 @@ export class PerfilUsuarioComponent implements OnInit {
     this.usuarios = this.userService.getUsers();
   }
   
-  detalle: boolean = false;
-  userSeleccionado : Usuario = {
-    nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: '', confirmarPassword: ''
-  }
   itemSelected(user: Usuario){
     this.detalle = true;
     this.userSeleccionado = user;
   }
 
-  registrar: boolean = false;
+  agregarUsuario(data: Usuario) {
+    this.userService.addUser(data);
+  }
+
   registro() {
     this.registrar = true;
   }
-
-  agregarUsuario(data: Usuario) {
-    this.usuarios.push(data);
-  }
-
-  panel: boolean = false;
-  panelAdmin() {
-    this.panel = true;
-  }
-
+  
   eliminarUsuario(data: Usuario) {
     console.log("se borrará: " + data.nombre);
 
@@ -69,6 +62,7 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   /* routerlink with params */
+  /*
   testrouter() {
     let user: Usuario = {
       nombre: '',
@@ -83,4 +77,5 @@ export class PerfilUsuarioComponent implements OnInit {
     user = this.usuarios[0];
     return ['/home/paneladmin:users', user];
   }
+  */
 }

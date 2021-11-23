@@ -4,7 +4,7 @@
 <div class="wrapper">
     <h3>Panel de admin:</h3>
     <div class="listado">
-        <ul class="listado-items" *ngFor="let usuario of usersPanel">
+        <ul class="listado-items" *ngFor="let usuario of usuarios">
             <li class="listado-usuarios-nombre">
                 <button (click)="itemSelected(usuario)">{{usuario.nombre}}</button>
             </li>

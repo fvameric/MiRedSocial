@@ -21,6 +21,8 @@ export class UsersService {
   }
 
   deleteUser(user: Usuario) {
-    this.users.push(user);
+    this.users.forEach((usuario, index)=>{
+      if(usuario == user) this.users.splice(index, 1);
+  });
   }
 }

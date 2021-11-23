@@ -24,7 +24,7 @@ const routes: Routes = [{
   component: RegistroUsuarioComponent
 },
 {
-  path: "home/paneladmin:users",
+  path: "home/paneladmin",
   component: PanelAdminComponent
 }
 ];
