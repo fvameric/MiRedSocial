@@ -1,10 +1,8 @@
 <div class="modal-header">
     <h4 class="modal-title">{{userSeleccionado.nombre}} {{userSeleccionado.apellidos}}</h4>
-    <button type="button" class="close" aria-label="Cerrar" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
+    <div class="close-modal" (click)="activeModal.dismiss('Cross click')">&#10006;</div>
+</div>
+<div class="modal-body">
     <p>
         <b>Nombre:</b> {{userSeleccionado.nombre}}
         <br>
@@ -20,7 +18,5 @@
         <br>
         <b>Password:</b> {{userSeleccionado.password}}
     </p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" (click)="activeModal.close('Close click')">Cerrar</button>
-  </div>
+    <button (click)="activeModal.close('Close click')" class="close-modal">Cerrar</button>
+</div>

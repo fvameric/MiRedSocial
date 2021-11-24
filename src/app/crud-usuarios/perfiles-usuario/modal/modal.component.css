@@ -1,0 +1,28 @@
+.modal,
+.modal-box {
+    z-index: 900;
+}
+
+.modal-header {
+    padding: 20px 40px;
+    background: #546E7A;
+    color: #ffffff;
+}
+
+.modal-body {
+    background: #ECEFF1;
+    padding: 60px 40px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    text-align: right;
+    cursor: pointer;
+}
+
+button {
+    border: 1px solid #333333;
+    outline: none;
+    color: #333333;
+}
