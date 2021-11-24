@@ -9,7 +9,7 @@ import { CrudModule } from './crud-usuarios/crud.module';
 import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-usuario/perfil-usuario.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './crud-usuarios/perfiles-usuario/modal/modal.component';
 import { PrincipalComponent } from './principal/principal.component';
 
@@ -23,7 +23,8 @@ import { PrincipalComponent } from './principal/principal.component';
     AppRoutingModule,
     CrudModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [

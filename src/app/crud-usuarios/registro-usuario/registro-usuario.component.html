@@ -1,65 +1,82 @@
-<div class="formulario">
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" novalidate>
+<!DOCTYPE html>
+<html lang="en">
 
-        <label for="first-name">First Name: </label><br>
-        <input id="first-name" type="text" formControlName="nombreUsuario" required><br><br>
-        <div *ngIf="profileForm.controls['nombreUsuario'].invalid && (profileForm.controls['nombreUsuario'].dirty || profileForm.controls['nombreUsuario'].touched)">
-            <div *ngIf="profileForm.controls['nombreUsuario'].errors?.required">
-                Se requiere nombre.
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap css -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="formulario">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" formControlName="nombreUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreUsuario.errors }" />
+                <div *ngIf="submitted && f.nombreUsuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.nombreUsuario.errors.required">Se requiere nombre</div>
+                </div>
             </div>
-        </div>
-
-        <label for="last-name">Last Name: </label><br>
-        <input id="last-name" type="text" formControlName="apellidosUsuario"><br><br>
-        <div *ngIf="profileForm.controls['apellidosUsuario'].invalid && (profileForm.controls['apellidosUsuario'].dirty || profileForm.controls['apellidosUsuario'].touched)">
-            <div *ngIf="profileForm.controls['apellidosUsuario'].errors?.required">
-                Se requiere nombre.
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text" formControlName="apellidosUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.apellidosUsuario.errors }" />
+                <div *ngIf="submitted && f.apellidosUsuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.apellidosUsuario.errors.required">Last Name is required</div>
+                </div>
             </div>
-        </div>
-
-        <label for="last-name">Edad: </label><br>
-        <input id="last-name" type="number" formControlName="edadUsuario"><br><br>
-        <div *ngIf="profileForm.controls['edadUsuario'].invalid && (profileForm.controls['edadUsuario'].dirty || profileForm.controls['edadUsuario'].touched)">
-            <div *ngIf="profileForm.controls['edadUsuario'].errors?.required">
-                Se requiere nombre.
+            <div class="form-group">
+                <label>Edad</label>
+                <input type="number" formControlName="edadUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.edadUsuario.errors }" />
+                <div *ngIf="submitted && f.edadUsuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.edadUsuario.errors.required">Last Name is required</div>
+                </div>
             </div>
-        </div>
-
-        <label for="last-name">Foto: </label><br>
-        <input id="last-name" type="text" formControlName="fotoUsuario"><br><br>
-        <div *ngIf="profileForm.controls['fotoUsuario'].invalid && (profileForm.controls['fotoUsuario'].dirty || profileForm.controls['fotoUsuario'].touched)">
-            <div *ngIf="profileForm.controls['fotoUsuario'].errors?.required">
-                Se requiere nombre.
+            <div class="form-group">
+                <label>Foto</label>
+                <input type="text" formControlName="fotoUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fotoUsuario.errors }" />
+                <div *ngIf="submitted && f.fotoUsuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.fotoUsuario.errors.required">Last Name is required</div>
+                </div>
             </div>
-        </div>
-
-        <label for="last-name">Desc: </label><br>
-        <input id="last-name" type="text" formControlName="descripcionUsuario"><br><br>
-        <div *ngIf="profileForm.controls['descripcionUsuario'].invalid && (profileForm.controls['descripcionUsuario'].dirty || profileForm.controls['descripcionUsuario'].touched)">
-            <div *ngIf="profileForm.controls['descripcionUsuario'].errors?.required">
-                Se requiere nombre.
+            <div class="form-group">
+                <label>Descripción</label>
+                <input type="text" formControlName="descripcionUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcionUsuario.errors }" />
+                <div *ngIf="submitted && f.descripcionUsuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.descripcionUsuario.errors.required">Last Name is required</div>
+                </div>
             </div>
-        </div>
-
-        <label for="last-name">Correo: </label><br>
-        <input id="last-name" type="email" formControlName="correoUsuario"><br><br>
-        <div *ngIf="profileForm.controls['correoUsuario'].invalid && (profileForm.controls['correoUsuario'].dirty || profileForm.controls['correoUsuario'].touched)">
-            <div *ngIf="profileForm.controls['correoUsuario'].errors?.required">
-                Se requiere nombre.
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" formControlName="correoUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.correoUsuario.errors }" />
+                <div *ngIf="submitted && f.correoUsuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.correoUsuario.errors.required">Email is required</div>
+                    <div *ngIf="f.correoUsuario.errors.email">Email must be a valid email address</div>
+                </div>
             </div>
-        </div>
-
-        <label for="last-name">Pass: </label><br>
-        <input id="last-name" type="password" formControlName="passwordUsuario"><br><br>
-        <div *ngIf="profileForm.controls['passwordUsuario'].invalid && (profileForm.controls['passwordUsuario'].dirty || profileForm.controls['passwordUsuario'].touched)">
-            <div *ngIf="profileForm.controls['passwordUsuario'].errors?.required">
-                Se requiere nombre.
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" formControlName="passwordUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passwordUsuario.errors }" />
+                <div *ngIf="submitted && f.passwordUsuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.passwordUsuario.errors.required">Password is required</div>
+                    <div *ngIf="f.passwordUsuario.errors.minlength">Password must be at least 6 characters</div>
+                </div>
             </div>
-        </div>
+            <div class="form-group">
+                <label>Confirmar contraseña</label>
+                <input type="password" formControlName="confirmarPasswordUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmarPasswordUsuario.errors }" />
+                <div *ngIf="submitted && f.confirmarPasswordUsuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.confirmarPasswordUsuario.errors.required">Confirm Password is required</div>
+                    <div *ngIf="f.confirmarPasswordUsuario.errors.mustMatch">Passwords must match</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
 
-        <label for="last-name">Confirmar pass: </label><br>
-        <input id="last-name" type="password" formControlName="confirmarPasswordUsuario"><br><br>
-
-        <input id="last-name" type="submit" [disabled]="!form.valid"><br><br>
-    </form>
-</div>
+</html>
