@@ -1,2 +1,20 @@
-<p>principal works!</p>
-<a routerLink="/home/listado">Listado</a>
+<div class="formulario">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" formControlName="userNickname" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="text" formControlName="userPass" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Iniciar sesión</button>
+        </div>
+    </form>
+
+    <div *ngIf='noEncontrado'>
+        No encontrado.
+    </div>
+</div>

@@ -4,12 +4,15 @@
     bottom: 0;
     left: 0;
     right: 0;
-  }
-  
-  .example-events {
+}
+
+.example-events {
     width: 300px;
     height: 200px;
     overflow: auto;
     border: 1px solid #555;
-  }
-  
+}
+
+body {
+    background: #eee !important;
+}
