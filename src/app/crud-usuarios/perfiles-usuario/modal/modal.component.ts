@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 //imports
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Usuario } from 'src/app/interfaces/usuarios';
 
 @Component({
@@ -12,7 +12,7 @@ import { Usuario } from 'src/app/interfaces/usuarios';
 export class ModalComponent implements OnInit {
   
   constructor(public activeModal: NgbActiveModal) { }
-
+  
   ngOnInit(): void {
   }
 

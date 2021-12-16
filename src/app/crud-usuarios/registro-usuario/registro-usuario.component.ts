@@ -15,6 +15,10 @@ export class RegistroUsuarioComponent implements OnInit {
   profileForm: any;
   submitted = false;
 
+  imgBase64Path: string = '';
+  isImageSaved: boolean = false;
+  cardImageBase64: string = '';
+
   constructor(private formBuilder: FormBuilder) {}
 
   @Input() usuariosAgregar: Usuario[] = [];
@@ -25,7 +29,7 @@ export class RegistroUsuarioComponent implements OnInit {
       nombreUsuario: ['', Validators.required],
       apellidosUsuario: ['', Validators.required],
       edadUsuario: ['', Validators.required],
-      fotoUsuario: ['', Validators.required],
+      fotoUsuario: [''],
       descripcionUsuario: ['', Validators.required],
       correoUsuario: ['', [Validators.required, Validators.email]],
       passwordUsuario: ['', [Validators.required, Validators.minLength(6)]],
@@ -33,6 +37,24 @@ export class RegistroUsuarioComponent implements OnInit {
     }, {
       validator: this.MustMatch('passwordUsuario', 'confirmarPasswordUsuario')
     });
+  }
+
+  fileChangeEvent(fileInput: any) {
+    if (fileInput.target.files && fileInput.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = rs => {
+          this.imgBase64Path = e.target.result;
+          this.cardImageBase64 = this.imgBase64Path;
+          this.isImageSaved = true;
+        };
+      };
+      reader.readAsDataURL(fileInput.target.files[0]);
+    } else {
+      this.cardImageBase64 = 'assets/default.png';
+    }
   }
   
   MustMatch(pass: string, confirmPass: string) {
@@ -69,7 +91,7 @@ export class RegistroUsuarioComponent implements OnInit {
             nombre: this.profileForm.get('nombreUsuario')!.value,
             apellidos: this.profileForm.get('apellidosUsuario')!.value,
             edad: this.profileForm.get('edadUsuario')!.value,
-            foto: this.profileForm.get('fotoUsuario')!.value,
+            foto: this.cardImageBase64,
             descripcion: this.profileForm.get('descripcionUsuario')!.value,
             correo: this.profileForm.get('correoUsuario')!.value,
             password: this.profileForm.get('passwordUsuario')!.value,

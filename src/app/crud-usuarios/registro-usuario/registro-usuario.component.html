@@ -24,56 +24,60 @@
                 <label>Apellidos</label>
                 <input type="text" formControlName="apellidosUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.apellidosUsuario.errors }" />
                 <div *ngIf="submitted && f.apellidosUsuario.errors" class="invalid-feedback">
-                    <div *ngIf="f.apellidosUsuario.errors.required">Last Name is required</div>
+                    <div *ngIf="f.apellidosUsuario.errors.required">Se requieren apellidos</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Edad</label>
                 <input type="number" formControlName="edadUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.edadUsuario.errors }" />
                 <div *ngIf="submitted && f.edadUsuario.errors" class="invalid-feedback">
-                    <div *ngIf="f.edadUsuario.errors.required">Last Name is required</div>
+                    <div *ngIf="f.edadUsuario.errors.required">Se requiere especificar edad</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Foto</label>
-                <input type="text" formControlName="fotoUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fotoUsuario.errors }" />
-                <div *ngIf="submitted && f.fotoUsuario.errors" class="invalid-feedback">
-                    <div *ngIf="f.fotoUsuario.errors.required">Last Name is required</div>
-                </div>
+                <input type="file" (change)="fileChangeEvent($event)" formControlName="fotoUsuario" class="form-control" />
+
+                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                    <img [src]="cardImageBase64" class="image" />
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <img src="assets/default.png">
+                </ng-template>
             </div>
             <div class="form-group">
                 <label>Descripción</label>
                 <input type="text" formControlName="descripcionUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcionUsuario.errors }" />
                 <div *ngIf="submitted && f.descripcionUsuario.errors" class="invalid-feedback">
-                    <div *ngIf="f.descripcionUsuario.errors.required">Last Name is required</div>
+                    <div *ngIf="f.descripcionUsuario.errors.required">Se requiere una descripción</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Email</label>
                 <input type="text" formControlName="correoUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.correoUsuario.errors }" />
                 <div *ngIf="submitted && f.correoUsuario.errors" class="invalid-feedback">
-                    <div *ngIf="f.correoUsuario.errors.required">Email is required</div>
-                    <div *ngIf="f.correoUsuario.errors.email">Email must be a valid email address</div>
+                    <div *ngIf="f.correoUsuario.errors.required">Se requiere un email</div>
+                    <div *ngIf="f.correoUsuario.errors.email">Email no válido</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Contraseña</label>
                 <input type="password" formControlName="passwordUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passwordUsuario.errors }" />
                 <div *ngIf="submitted && f.passwordUsuario.errors" class="invalid-feedback">
-                    <div *ngIf="f.passwordUsuario.errors.required">Password is required</div>
-                    <div *ngIf="f.passwordUsuario.errors.minlength">Password must be at least 6 characters</div>
+                    <div *ngIf="f.passwordUsuario.errors.required">Se requiere contraseña</div>
+                    <div *ngIf="f.passwordUsuario.errors.minlength">La contraseña tiene que ser al menos de 6 letras</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Confirmar contraseña</label>
                 <input type="password" formControlName="confirmarPasswordUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmarPasswordUsuario.errors }" />
                 <div *ngIf="submitted && f.confirmarPasswordUsuario.errors" class="invalid-feedback">
-                    <div *ngIf="f.confirmarPasswordUsuario.errors.required">Confirm Password is required</div>
-                    <div *ngIf="f.confirmarPasswordUsuario.errors.mustMatch">Passwords must match</div>
+                    <div *ngIf="f.confirmarPasswordUsuario.errors.required">Se requiere confirmación de contraseña</div>
+                    <div *ngIf="f.confirmarPasswordUsuario.errors.mustMatch">Las contraseñas no coinciden</div>
                 </div>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Register</button>
+                <button class="btn btn-primary">Registrar</button>
             </div>
         </form>
     </div>

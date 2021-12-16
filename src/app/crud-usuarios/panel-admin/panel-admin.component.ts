@@ -15,7 +15,7 @@ export class PanelAdminComponent implements OnInit {
   
   usuarios: Usuario[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private userService: UsersService) {
+  constructor(private userService: UsersService) {
     
   }
 
