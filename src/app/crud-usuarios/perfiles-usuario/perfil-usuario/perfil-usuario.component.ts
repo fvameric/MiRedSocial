@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/usuarios';
 import { UsersService } from 'src/app/services/users.service';
 
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
@@ -61,22 +61,4 @@ export class PerfilUsuarioComponent implements OnInit {
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.userSeleccionado = user;
   }
-
-  /* routerlink with params */
-  /*
-  testrouter() {
-    let user: Usuario = {
-      nombre: '',
-      apellidos: '',
-      edad: 0,
-      foto: '',
-      descripcion: '',
-      correo: '',
-      password: '',
-      confirmarPassword: ''
-    }
-    user = this.usuarios[0];
-    return ['/home/paneladmin:users', user];
-  }
-  */
 }

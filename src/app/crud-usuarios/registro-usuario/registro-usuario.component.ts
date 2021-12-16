@@ -17,7 +17,7 @@ export class RegistroUsuarioComponent implements OnInit {
 
   imgBase64Path: string = '';
   isImageSaved: boolean = false;
-  cardImageBase64: string = '';
+  cardImageBase64: string = 'assets/default.png';
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -52,8 +52,6 @@ export class RegistroUsuarioComponent implements OnInit {
         };
       };
       reader.readAsDataURL(fileInput.target.files[0]);
-    } else {
-      this.cardImageBase64 = 'assets/default.png';
     }
   }
   
@@ -99,7 +97,7 @@ export class RegistroUsuarioComponent implements OnInit {
           }
 
           this.onNuevoUsuario.emit(usuarioNuevo);
-          Swal.fire('Se registró a ' + this.profileForm.get('firstName')!.value + '!', '', 'success')
+          Swal.fire('Se registró a ' + this.profileForm.get('nombreUsuario')!.value + '!', '', 'success')
         } else if (result.isDenied) {
           Swal.fire('No se registró a nadie', '', 'info')
         }
