@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuarios';
 import { UsersService } from 'src/app/services/users.service';
 
+declare var particlesJS: any;
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -22,6 +23,8 @@ export class PrincipalComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private userService: UsersService, private router: Router) { }
   
   ngOnInit(): void {
+    particlesJS.load('particles-js', 'particles.json', null);
+    
     this.usuarios = this.userService.getUsers();
 
     this.loginForm = this.formBuilder.group({
