@@ -21,7 +21,7 @@ export class PerfilUsuarioComponent implements OnInit {
   registrar: boolean = false;
   detalle: boolean = false;
   userSeleccionado : Usuario = {
-    nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: '', confirmarPassword: ''
+    nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: ''
   }
 
   constructor(public modalService: NgbModal, private userService: UsersService) { }
@@ -44,7 +44,11 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   registro() {
-    this.registrar = true;
+    if (this.registrar == true) {
+      this.registrar = false;
+    } else {
+      this.registrar = true;
+    }
   }
   
   eliminarUsuario(data: Usuario) {

@@ -30,7 +30,7 @@ export class RegistroUsuarioComponent implements OnInit {
       apellidosUsuario: ['', Validators.required],
       edadUsuario: ['', Validators.required],
       fotoUsuario: [''],
-      descripcionUsuario: ['', Validators.required],
+      descripcionUsuario: ['', [Validators.required, Validators.minLength(4)]],
       correoUsuario: ['', [Validators.required, Validators.email]],
       passwordUsuario: ['', [Validators.required, Validators.minLength(6)]],
       confirmarPasswordUsuario: ['', Validators.required]
@@ -92,8 +92,7 @@ export class RegistroUsuarioComponent implements OnInit {
             foto: this.cardImageBase64,
             descripcion: this.profileForm.get('descripcionUsuario')!.value,
             correo: this.profileForm.get('correoUsuario')!.value,
-            password: this.profileForm.get('passwordUsuario')!.value,
-            confirmarPassword: this.profileForm.get('confirmarPasswordUsuario')!.value
+            password: this.profileForm.get('passwordUsuario')!.value
           }
 
           this.onNuevoUsuario.emit(usuarioNuevo);

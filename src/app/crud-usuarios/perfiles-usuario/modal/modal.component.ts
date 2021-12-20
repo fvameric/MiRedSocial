@@ -17,7 +17,7 @@ export class ModalComponent implements OnInit {
   }
 
   @Input() userSeleccionado: Usuario = {
-    nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: '', confirmarPassword: ''
+    nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: ''
   }
 
 }

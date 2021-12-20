@@ -5,6 +5,5 @@ export interface Usuario {
     foto: string,
     descripcion: string,
     correo: string,
-    password: string,
-    confirmarPassword: string;
+    password: string
 }

@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { PanelAdminComponent } from './crud-usuarios/panel-admin/panel-admin.component';
 import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-usuario/perfil-usuario.component';
 import { RegistroUsuarioComponent } from './crud-usuarios/registro-usuario/registro-usuario.component';
-import { PrincipalComponent } from './principal/principal.component';
-import { Usuario } from 'src/app/interfaces/usuarios';
 
 const routes: Routes = [{
   path: '',
@@ -13,10 +11,6 @@ const routes: Routes = [{
 },
 {
   path: "home",
-  component: PrincipalComponent
-},
-{
-  path: "home/listado",
   component: PerfilUsuarioComponent
 },
 {

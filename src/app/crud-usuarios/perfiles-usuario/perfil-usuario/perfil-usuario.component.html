@@ -1,22 +1,21 @@
-<a routerLink="/home">Cerrar sesión</a><br>
+
 
 <a routerLink="/home/paneladmin">Panel de admin</a><br>
 
 <div class="wrapper">
-    <h3>Listado de usuarios:</h3>
+    <h3>Usuarios</h3>
     <div class="listado">
-        <ul class="listado-items" *ngFor="let usuario of usuarios">
-            <li class="listado-usuarios-nombre">
-                <button (click)="abrirModal(usuario)">{{usuario.nombre}}</button>
-            </li>
-        </ul>
+        <div class="listado-items" *ngFor="let usuario of usuarios">
+            <div class="item">
+                <div><img src='{{usuario.foto}}' /> {{usuario.nombre}}</div> <div class='user-description'>{{usuario.descripcion}}</div><button (click)="abrirModal(usuario)">Ver</button>
+            </div>
+        </div>
+    </div>
+    <div class="btn-registrar">
+        <button (click)="registro()">Panel de registro</button>
     </div>
 </div>
 
-<div>
-    <button (click)="registro()">Registrar</button>
-</div>
-
-<div *ngIf="registrar">
+<ng-container *ngIf="registrar" >
     <app-registro-usuario (onNuevoUsuario)="agregarUsuario($event)" [usuariosAgregar]="usuarios"></app-registro-usuario>
-</div>
+</ng-container>

@@ -11,12 +11,10 @@ import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './crud-usuarios/perfiles-usuario/modal/modal.component';
-import { PrincipalComponent } from './principal/principal.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PrincipalComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
