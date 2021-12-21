@@ -1,3 +1,4 @@
+// interface Usuario
 export interface Usuario {
     nombre: string,
     apellidos: string,

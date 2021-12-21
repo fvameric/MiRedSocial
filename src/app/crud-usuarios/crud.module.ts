@@ -10,17 +10,23 @@ import { RouterModule } from '@angular/router';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from './perfiles-usuario/modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListaDetalleComponent } from './lista-detalle/lista-detalle.component';
 @NgModule({
   declarations: [
     PerfilUsuarioComponent,
     RegistroUsuarioComponent,
-    PanelAdminComponent
+    PanelAdminComponent,
+    ModalComponent,
+    ListaDetalleComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   exports: [
     PerfilUsuarioComponent

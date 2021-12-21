@@ -19,8 +19,8 @@ export class PerfilUsuarioComponent implements OnInit {
 
   //panel: boolean = false;
   registrar: boolean = false;
-  detalle: boolean = false;
-  userSeleccionado : Usuario = {
+  
+  userSeleccionado: Usuario = {
     nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: ''
   }
 
@@ -35,7 +35,6 @@ export class PerfilUsuarioComponent implements OnInit {
   }
   
   itemSelected(user: Usuario){
-    this.detalle = true;
     this.userSeleccionado = user;
   }
 
@@ -50,18 +49,11 @@ export class PerfilUsuarioComponent implements OnInit {
       this.registrar = true;
     }
   }
-  
-  eliminarUsuario(data: Usuario) {
-    console.log("se borrará: " + data.nombre);
 
-    this.usuarios.forEach((element,index) => {
-      if (element.correo == data.correo) {
-        this.usuarios.splice(index,1);
-      }
-    });
-  }
-
+  // abrirá el modal y guardo el usuario seleccionado
+  // para mostrarlo en el componente lista-detalle y utilizar el INPUT
   abrirModal(user: Usuario) {
+    this.userSeleccionado = user;
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.userSeleccionado = user;
   }

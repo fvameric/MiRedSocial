@@ -16,6 +16,8 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // input del usuario pulsado en algún listado
+  // del componente perfil-usuario
   @Input() userSeleccionado: Usuario = {
     nombre: '', apellidos: '', edad: 0, foto: '', descripcion: '', correo: '', password: ''
   }

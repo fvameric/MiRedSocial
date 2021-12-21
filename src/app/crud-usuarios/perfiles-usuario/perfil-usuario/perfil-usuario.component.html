@@ -1,13 +1,36 @@
+<!-- componente principal -->
 
+<!--
+    uso de input
+    userListado -> variable Input de lista-detalle
+    userSeleccionado -> variable de perfil-usuario
 
-<a routerLink="/home/paneladmin">Panel de admin</a><br>
+    ya que no sabía dónde usar input he hecho esto
+    se mostrará el nombre del usuario clickado en "Ver" al abrir el modal
+ -->
+<div class="div-input">
+    <app-lista-detalle [userListado]="userSeleccionado"></app-lista-detalle>
+</div>
 
+<!--
+    uso de output
+    onNuevoUsuario -> variable Output de registro-usuario
+    agregarUsuario() -> función de perfil-usuario
+ -->
 <div class="wrapper">
+    <div class="btn-panel-link">
+        <a routerLink="/home/paneladmin">
+            <button>
+                Panel de admin
+            </button>
+        </a>
+    </div>
     <h3>Usuarios</h3>
     <div class="listado">
         <div class="listado-items" *ngFor="let usuario of usuarios">
             <div class="item">
-                <div><img src='{{usuario.foto}}' /> {{usuario.nombre}}</div> <div class='user-description'>{{usuario.descripcion}}</div><button (click)="abrirModal(usuario)">Ver</button>
+                <div><img src='{{usuario.foto}}' /> {{usuario.nombre}}</div>
+                <div class='user-description'>{{usuario.descripcion}}</div><button (click)="abrirModal(usuario)">Ver</button>
             </div>
         </div>
     </div>
@@ -16,6 +39,11 @@
     </div>
 </div>
 
-<ng-container *ngIf="registrar" >
-    <app-registro-usuario (onNuevoUsuario)="agregarUsuario($event)" [usuariosAgregar]="usuarios"></app-registro-usuario>
+<!--
+    uso de output
+    onNuevoUsuario -> variable Output de registro-usuario
+    agregarUsuario() -> función de perfil-usuario
+ -->
+<ng-container *ngIf="registrar">
+    <app-registro-usuario (onNuevoUsuario)="agregarUsuario($event)"></app-registro-usuario>
 </ng-container>

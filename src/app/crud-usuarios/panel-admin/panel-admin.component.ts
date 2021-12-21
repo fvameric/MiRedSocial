@@ -15,9 +15,10 @@ export class PanelAdminComponent implements OnInit {
   
   usuarios: Usuario[] = [];
 
-  constructor(private userService: UsersService) {
-    
-  }
+  constructor(private userService: UsersService) {}
+
+  @Input() usersPanel: Usuario[] = [];
+  @Output() onUsuarioBorrado: EventEmitter<Usuario> = new EventEmitter();
 
   ngOnInit(): void {
     this.getUsers();
@@ -26,10 +27,7 @@ export class PanelAdminComponent implements OnInit {
   getUsers(): void {
     this.usuarios = this.userService.getUsers();
   }
-
-  //@Input() usersPanel: Usuario[] = [];
-  @Output() onUsuarioBorrado: EventEmitter<Usuario> = new EventEmitter();
-
+  
   itemSelected(user: Usuario) {
 
     Swal.fire({

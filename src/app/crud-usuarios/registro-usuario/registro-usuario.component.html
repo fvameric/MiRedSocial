@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- bootstrap css -->
+    <!-- formulario por bootstrap -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
@@ -14,26 +14,26 @@
     <div class="formulario">
         <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <input type="text" formControlName="nombreUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreUsuario.errors }" placeholder="Nombre"/>
+                <input type="text" formControlName="nombreUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreUsuario.errors }" placeholder="Nombre" />
                 <div *ngIf="submitted && f.nombreUsuario.errors" class="invalid-feedback">
                     <div *ngIf="f.nombreUsuario.errors.required">Se requiere nombre</div>
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" formControlName="apellidosUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.apellidosUsuario.errors }" placeholder="Apellidos"/>
+                <input type="text" formControlName="apellidosUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.apellidosUsuario.errors }" placeholder="Apellidos" />
                 <div *ngIf="submitted && f.apellidosUsuario.errors" class="invalid-feedback">
                     <div *ngIf="f.apellidosUsuario.errors.required">Se requieren apellidos</div>
                 </div>
             </div>
             <div class="form-group">
-                <input type="number" formControlName="edadUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.edadUsuario.errors }" placeholder="Edad"/>
+                <input type="number" formControlName="edadUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.edadUsuario.errors }" placeholder="Edad" />
                 <div *ngIf="submitted && f.edadUsuario.errors" class="invalid-feedback">
                     <div *ngIf="f.edadUsuario.errors.required">Se requiere especificar edad</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Foto</label>
-                <input type="file" (change)="fileChangeEvent($event)" formControlName="fotoUsuario" class="form-control" placeholder="Foto"/>
+                <input type="file" (change)="fileChangeEvent($event)" formControlName="fotoUsuario" class="form-control" placeholder="Foto" />
 
                 <ng-container *ngIf="isImageSaved; else elseTemplate">
                     <img [src]="cardImageBase64" class="image" />
@@ -43,28 +43,28 @@
                 </ng-template>
             </div>
             <div class="form-group">
-                <input type="text" formControlName="descripcionUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcionUsuario.errors }" placeholder="Descripción"/>
+                <input type="text" formControlName="descripcionUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcionUsuario.errors }" placeholder="Descripción" />
                 <div *ngIf="submitted && f.descripcionUsuario.errors" class="invalid-feedback">
                     <div *ngIf="f.descripcionUsuario.errors.required">Se requiere una descripción</div>
                     <div *ngIf="f.descripcionUsuario.errors.minlength">El campo descripción necesita al menos 4 carácteres</div>
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" formControlName="correoUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.correoUsuario.errors }" placeholder="Email"/>
+                <input type="text" formControlName="correoUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.correoUsuario.errors }" placeholder="Email" />
                 <div *ngIf="submitted && f.correoUsuario.errors" class="invalid-feedback">
                     <div *ngIf="f.correoUsuario.errors.required">Se requiere un email</div>
                     <div *ngIf="f.correoUsuario.errors.email">Email no válido</div>
                 </div>
             </div>
             <div class="form-group">
-                <input type="password" formControlName="passwordUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passwordUsuario.errors }" placeholder="Contraseña"/>
+                <input type="password" formControlName="passwordUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passwordUsuario.errors }" placeholder="Contraseña" />
                 <div *ngIf="submitted && f.passwordUsuario.errors" class="invalid-feedback">
                     <div *ngIf="f.passwordUsuario.errors.required">Se requiere contraseña</div>
                     <div *ngIf="f.passwordUsuario.errors.minlength">La contraseña tiene que ser al menos de 6 letras</div>
                 </div>
             </div>
             <div class="form-group">
-                <input type="password" formControlName="confirmarPasswordUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmarPasswordUsuario.errors }" placeholder="Confirmar contraseña"/>
+                <input type="password" formControlName="confirmarPasswordUsuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmarPasswordUsuario.errors }" placeholder="Confirmar contraseña" />
                 <div *ngIf="submitted && f.confirmarPasswordUsuario.errors" class="invalid-feedback">
                     <div *ngIf="f.confirmarPasswordUsuario.errors.required">Se requiere confirmación de contraseña</div>
                     <div *ngIf="f.confirmarPasswordUsuario.errors.mustMatch">Las contraseñas no coinciden</div>

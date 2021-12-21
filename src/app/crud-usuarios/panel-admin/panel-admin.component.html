@@ -1,12 +1,19 @@
-<a routerLink="/home">Listado</a><br>
-
 <div class="wrapper">
-    <h3>Panel de admin:</h3>
-    <div class="listado">
-        <ul class="listado-items" *ngFor="let usuario of usuarios">
-            <li class="listado-usuarios-nombre">
-                <button (click)="itemSelected(usuario)">{{usuario.nombre}}</button>
-            </li>
-        </ul>
+    <div class="btn-home-link">
+        <a routerLink="/home">
+            <button>
+                Listado
+            </button>
+        </a>
+    </div>
+    <h3>Panel de administrador:</h3>
+    <div class="div-tabla">
+        <table class="tabla">
+            <tr *ngFor="let usuario of usuarios">
+                <td class="tabla-td">
+                    <button (click)="itemSelected(usuario) ">{{usuario.nombre}}</button>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>

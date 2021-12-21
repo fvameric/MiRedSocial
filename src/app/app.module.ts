@@ -11,6 +11,7 @@ import { PerfilUsuarioComponent } from './crud-usuarios/perfiles-usuario/perfil-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './crud-usuarios/perfiles-usuario/modal/modal.component';
+import { ListaDetalleComponent } from './crud-usuarios/lista-detalle/lista-detalle.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ModalComponent } from './crud-usuarios/perfiles-usuario/modal/modal.com
     CrudModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [
